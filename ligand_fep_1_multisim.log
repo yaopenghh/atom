@@ -1,0 +1,126 @@
+Job launching command:
+$SCHRODINGER/utilities/multisim -HOST localhost -SUBHOST localhost -m ligand_fep_1.msj -JOBNAME ligand_fep_1 ligand_fep_1.mae -PROJ /home/desmond/.schrodinger/tmp/Tmp_24Mar2025_1611_17776 -DISP append -VIEWNAME ligand_fep.FEPScholarPanel -TMPLAUNCHDIR -VIEWNAME ligand_fep.FEPScholarPanel -TMPLAUNCHDIR
+
+Booting the multisim workflow engine...
+           multisim version: 4.0.0
+            mmshare version: 6.4
+                    Jobname: ligand_fep_1
+                   Username: desmond
+              Main job host: cadd89
+                Subjob host: localhost
+                     Job ID: cadd89-0-67e11421
+            multisim script: ligand_fep_1.msj
+       Structure input file: ligand_fep_1.mae
+            CPUs per subjob: "1"
+             Job start time: Mon Mar 24 16:13:26 2025
+           Launch directory: /global_bigdata/yaopeng/NEW/FEP/ligand_fep_1
+               $SCHRODINGER: /home/desmond/desmond_2023-4
+               $OPLS_DIR: <empty>
+
+Parsing the multisim script file...
+
+Summary of user stages:
+  stage 1 - task
+  stage 2 - multisim
+  stage 3 - calc_ddg
+(3 stages in total)
+
+Workflow is started now.
+
+Stage 1 - task
+stage[1] task: Detecting system type...
+stage[1] task:   It seems raw geometries created for FEP calculations
+stage[1] task: Recognizing traits of system...
+stage[1] task:   (none)
+
+Stage 1 completed successfully.
+
+Stage 1 duration: 0h 0' 0"
+
+
+Stage 2 - multisim
+
+Running subjobs on hosts:
+  localhost (Max: 1)
+Number of jobs:       2
+Max retries per job:  3
+Max allowed failures: unlimited
+Verbosity:            normal
+
+Starting JobDJ...
+
+Keep one job on driver host: False
+Smart license checking: True
+JobDJ columns:
+  C: Number of completed subjobs
+  A: Number of active subjobs (e.g., submitted, running)
+  W: Number of waiting/pending subjobs
+
+C A W | Activity  JobId  JobName  JobHost
+- - - | --------- -----------------------
+0 1 1 | launched  cadd89-0-67e1142b ligand_fep_1_complex localhost [cadd89]
+1 0 1 | finished  cadd89-0-67e1142b ligand_fep_1_complex localhost [cadd89]
+1 1 0 | launched  cadd89-0-67e131f5 ligand_fep_1_solvent localhost [cadd89]
+2 0 0 | finished  cadd89-0-67e131f5 ligand_fep_1_solvent localhost [cadd89]
+
+All jobs have completed.
+
+2 of 2 job(s) succeeded; 0 job(s) failed.
+
+
+Job("cadd89-0-67e1142b") was successfully finished.
+  Host       : localhost:1
+  Launch time: Mon Mar 24 16:13:31 2025
+  Start time : Mon Mar 24 16:13:31 2025
+  End time   : Mon Mar 24 18:20:31 2025
+  Duration   : 2h 7' 0"
+  CPUs       : 1
+  CPU time   : 2h 7' 0"
+  Exit code  : 0
+  Jobname    : ligand_fep_1_complex
+  Stage      : 2 (multisim)
+Stage 2 duration: 3h 4' 29"
+
+
+Job("cadd89-0-67e131f5") was successfully finished.
+  Host       : localhost:1
+  Launch time: Mon Mar 24 18:20:37 2025
+  Start time : Mon Mar 24 18:20:37 2025
+  End time   : Mon Mar 24 19:17:55 2025
+  Duration   : 0h 57' 18"
+  CPUs       : 1
+  CPU time   : 0h 57' 18"
+  Exit code  : 0
+  Jobname    : ligand_fep_1_solvent
+  Stage      : 2 (multisim)
+Stage 2 duration: 3h 4' 29"
+
+
+Stage 2 completed successfully.
+
+Stage 2 duration: 3h 4' 29"
+
+
+Stage 3 - calc_ddg
+stage[3] calc_ddg: 2 successful multisim subjobs in total
+stage[3] calc_ddg: We found 1 subjob pairs to calculate ddG.
+
+Reading file: /var/tmp/desmond/ligand_fep_1/ligand_fep_1_fep1/ligand_fep_1_2/ligand_fep_1_complex-out.mae
+Reading file: /var/tmp/desmond/ligand_fep_1/ligand_fep_1_fep1/ligand_fep_1_2/ligand_fep_1_solvent-out.mae
+---------Fragment Name---------+------dG1------+------dG2------+------ddG------
+lig2                            -243.99+-0.99   -236.38+-1.05   -7.61+-1.45     
+
+
+Stage 3 completed successfully.
+
+Stage 3 duration: 0h 0' 2"
+
+Cleaning up files...
+
+Multisim summary (Mon Mar 24 19:17:58 2025):
+  Stage 1 completed.
+  Stage 2 completed.
+  Stage 3 completed.
+  Total duration: 3h 4' 32"
+Multisim completed.
+[running at reduced cpu priority]
